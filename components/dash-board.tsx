@@ -539,7 +539,6 @@ interface Entry {
 
 export default function Dashboard() {
   const [entries, setEntries] = useState<Entry[]>([]);
-  const [allEntries, setAllEntries] = useState<Entry[]>([]);
   const [filteredEntries, setFilteredEntries] = useState<Entry[]>([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(0);
@@ -869,7 +868,7 @@ export default function Dashboard() {
                   <div className="flex items-center space-x-2">
                     <span className="text-blue-600">🔍</span>
                     <span className="text-sm sm:text-base text-blue-800 font-medium">
-                      Search results for "{searchQuery}"
+                      Search results for {searchQuery}
                     </span>
                   </div>
                   <button
@@ -1071,7 +1070,7 @@ export default function Dashboard() {
                 {!hasMore && entries.length > 0 && (
                   <div className="flex items-center space-x-2 text-gray-400 text-xs sm:text-sm md:text-base">
                     <span>✨</span>
-                    <span>You've reached the end</span>
+                    <span>You reached the end</span>
                   </div>
                 )}
               </div>

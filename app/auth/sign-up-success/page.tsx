@@ -6,11 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useRouter } from "next/navigation";
 import { Mail } from "lucide-react";
 
 export default function Page() {
-  const router = useRouter();
 
   const redirectToGmail = () => {
     window.open(

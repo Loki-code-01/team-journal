@@ -3,6 +3,7 @@
 
 import { useState, FormEvent, useEffect } from 'react';
 import { createClient } from "@/lib/supabase/client";
+import { User } from '@supabase/supabase-js';
 
 interface AddEntryDrawerProps {
   isOpen: boolean;
@@ -15,7 +16,7 @@ export default function AddEntryDrawer({ isOpen, onClose, refreshEntries }: AddE
   const [content, setContent] = useState('');
   const [image, setImage] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
-const [user,setUser]=useState<any>()
+  const [user,setUser]=useState<User|null>(null)
   const supabase = createClient();
   
 useEffect(() => {
